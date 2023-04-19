@@ -6,28 +6,29 @@ class Category extends Model {}
 
 Category.init(
   {
-    // define columns
+    // define columns - josie
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
-      allowNull: false
+      allowNull: false,
     },
 
     category_name: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
     },
 
-
   },
+  
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
     modelName: 'category',
-  }
+  },
+
 );
 
 module.exports = Category;

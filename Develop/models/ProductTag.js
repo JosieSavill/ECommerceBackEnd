@@ -6,7 +6,37 @@ class ProductTag extends Model {}
 
 ProductTag.init(
   {
-    // define columns
+    // define columns - josie
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+      allowNull: false,
+    },
+
+    product_id: {
+      type: DataTypes.INTEGER,
+      // * References the `Product` model's `id` - josie
+      references: {
+        model: Product,
+        key: id,
+      }
+      // autoIncrement: true,- josie
+      // allowNull: false, - josie
+    },
+
+    tag_id: {
+      type: DataTypes.INTEGER,
+      // * References the `Tag` model's `id` - josie
+      references: {
+        model: Tag,
+        key: id,
+      }
+      // autoIncrement: true, - josie
+      // allowNull: false, - josie
+    },
+
+
   },
   {
     sequelize,
@@ -23,18 +53,26 @@ module.exports = ProductTag;
 
 // Your database should contain the following four models, including the requirements listed for each model:
 
-// * `Tag`
+// * `ProductTag`
 
 //   * `id`
-  
+
 //     * Integer.
-  
+
 //     * Doesn't allow null values.
-  
+
 //     * Set as primary key.
-  
+
 //     * Uses auto increment.
 
-//   * `tag_name`
-  
-//     * String.
+//   * `product_id`
+
+//     * Integer.
+
+//     * References the `Product` model's `id`.
+
+//   * `tag_id`
+
+//     * Integer.
+
+//     * References the `Tag` model's `id`.
