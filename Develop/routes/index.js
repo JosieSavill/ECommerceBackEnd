@@ -9,7 +9,9 @@ router.use((req, res) => {
 
 module.exports = router;
 
-// ### Fill Out the API Routes to Perform RESTful CRUD Operations
+// ### Fill Out the API Routes to Perform RESTful CRUD Operations - josie
+
+
 
 // Fill out the unfinished routes in `product-routes.js`, `tag-routes.js`, and `category-routes.js` to perform create, read, update, and delete operations using your Sequelize models.
 
