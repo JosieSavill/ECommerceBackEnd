@@ -68,15 +68,25 @@ Tag.create(req.body)
 router.put('/:id', async (req, res) => {
   // update a tag's name by its `id` value
   try {
-    const tag = await Tag.findByPk(req.params.id);
+    const tag = await Tag.update({
+      tag_name: req.body.tag_name
+    },{
+      where: {
+        id: req.params.id
+      }
+    });
+
+
     if (!tag) {
       return res.status(404).json({error: "Tag no found"});
     }
 
-    tag.name = req.body.name;
-    await tag.save();
 
-    res.json(tag);
+    res.json({
+      message: "Success"
+    });
+
+
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Server error'});

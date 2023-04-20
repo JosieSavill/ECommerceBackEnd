@@ -31,20 +31,3 @@ Tag.init(
 module.exports = Tag;
 
 
-// Your database should contain the following four models, including the requirements listed for each model:
-
-// * `Tag`
-
-//   * `id`
-  
-//     * Integer.
-  
-//     * Doesn't allow null values.
-  
-//     * Set as primary key.
-  
-//     * Uses auto increment.
-
-//   * `tag_name`
-  
-//     * String.
